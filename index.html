@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PCore — Магазин компьютерных комплектующих</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#" class="logo">
+          <span>PC<span class="accent">ore</span></span>
+        </a>
+
+        <button class="burger" id="burger">Меню</button>
+
+        <nav class="nav" id="nav">
+          <a href="#hero">Главная</a>
+          <a href="#catalog">Каталог</a>
+          <a href="#contacts">Контакты</a>
+
+          <button class="compare-btn" id="compare-open-btn">
+            Сравнение (<span id="compare-count">0</span>)
+          </button>
+
+          <button class="favorite-btn" id="fav-open-btn">
+            Избранное (<span id="favorite-count">0</span>)
+          </button>
+
+          <button class="cart-btn" id="cart-open-btn">
+            Корзина (<span id="cart-count">0</span>)
+          </button>
+
+          <button class="login-btn" id="login-open-btn">Войти</button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero__bg-overlay"></div>
+      <div class="container hero__container">
+        <div class="hero__badge">Новые поступления 2026</div>
+        <h1>Собери свой<br /><span>идеальный ПК</span></h1>
+        <p>
+          Процессоры, видеокарты, SSD и материнские платы для гейминга и
+          профессиональной работы. Лучшие комплектующие — в одном месте.
+        </p>
+        <div class="hero__buttons">
+          <a href="#catalog" class="hero__btn hero__btn--primary">В каталог</a>
+          <a href="#contacts" class="hero__btn hero__btn--ghost">Связаться</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__number">1200+</span>
+            <span class="stat__label">товаров</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">48ч</span>
+            <span class="stat__label">доставка</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">5 лет</span>
+            <span class="stat__label">гарантия</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <h2 class="section-title">Каталог комплектующих</h2>
+
+        <div class="catalog__search-wrapper">
+          <input
+            type="text"
+            id="catalog-search"
+            class="catalog-search"
+            placeholder="Поиск по каталогу..."
+          />
+        </div>
+
+        <div class="categories">
+          <button class="category-btn active" data-category="all">Все</button>
+          <button class="category-btn" data-category="cpu">Процессоры</button>
+          <button class="category-btn" data-category="gpu">Видеокарты</button>
+          <button class="category-btn" data-category="mb">
+            Материнские платы
+          </button>
+          <button class="category-btn" data-category="ssd">SSD</button>
+          <button class="category-btn" data-category="ram">
+            Оперативная память
+          </button>
+        </div>
+
+        <div class="products" id="products">
+          <div class="product-card" data-category="cpu">
+            <div class="product-card__img">
+              <img src="images/amd57600.webp" alt="AMD Ryzen 5 7600X" />
+            </div>
+            <div class="product-card__body">
+              <h3>AMD Ryzen 5 7600X</h3>
+              <p>6 ядер / 12 потоков, до 4.7 ГГц, AM5</p>
+              <span class="price">21 490 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="cpu">
+            <div class="product-card__img">
+              <img src="images/amdr.webp" alt="AMD Ryzen 9 7950X" />
+            </div>
+            <div class="product-card__body">
+              <h3>AMD Ryzen 9 7950X</h3>
+              <p>16 ядер / 32 потока, до 5.7 ГГц, AM5</p>
+              <span class="price">59 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="cpu">
+            <div class="product-card__img">
+              <img src="images/intelci9.webp" alt="Intel Core i9-14900K" />
+            </div>
+            <div class="product-card__body">
+              <h3>Intel Core i9-14900K</h3>
+              <p>24 ядра, до 6.0 ГГц, LGA1700</p>
+              <span class="price">64 499 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="cpu">
+            <div class="product-card__img">
+              <img src="images/amdr7.webp" alt="AMD Ryzen 7 7800X3D" />
+            </div>
+            <div class="product-card__body">
+              <h3>AMD Ryzen 7 7800X3D</h3>
+              <p>8 ядер, 3D V-Cache, AM5</p>
+              <span class="price">41 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="cpu">
+            <div class="product-card__img">
+              <img src="images/intelci5.webp" alt="Intel Core i5-14600K" />
+            </div>
+            <div class="product-card__body">
+              <h3>Intel Core i5-14600K</h3>
+              <p>14 ядер, до 5.3 ГГц, разблокированный</p>
+              <span class="price">22 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="gpu">
+            <div class="product-card__img">
+              <img src="images/rtx4090.webp" alt="GeForce RTX 4090" />
+            </div>
+            <div class="product-card__body">
+              <h3>GeForce RTX 4090</h3>
+              <p>24GB GDDR6X, DLSS 3</p>
+              <span class="price">189 999 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="gpu">
+            <div class="product-card__img">
+              <img src="images/4080s.webp" alt="GeForce RTX 4080 SUPER" />
+            </div>
+            <div class="product-card__body">
+              <h3>GeForce RTX 4080 SUPER</h3>
+              <p>16GB GDDR6X, 4K Ultra, DLSS 3.5</p>
+              <span class="price">119 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="gpu">
+            <div class="product-card__img">
+              <img src="images/4070ti.webp" alt="RTX 4070 Ti SUPER" />
+            </div>
+            <div class="product-card__body">
+              <h3>RTX 4070 Ti SUPER</h3>
+              <p>16GB GDDR6X, 4K Ready</p>
+              <span class="price">89 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="gpu">
+            <div class="product-card__img">
+              <img src="images/rrx7900.webp" alt="Radeon RX 7900 XTX" />
+            </div>
+            <div class="product-card__body">
+              <h3>Radeon RX 7900 XTX</h3>
+              <p>24GB GDDR6, 384-bit, FSR 3.0</p>
+              <span class="price">99 499 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="mb">
+            <div class="product-card__img">
+              <img src="images/asusz790.webp" alt="ASUS ROG MAXIMUS Z790" />
+            </div>
+            <div class="product-card__body">
+              <h3>ASUS ROG MAXIMUS Z790</h3>
+              <p>DDR5, PCIe 5.0, WiFi 7, LGA1700</p>
+              <span class="price">44 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="mb">
+            <div class="product-card__img">
+              <img src="images/b650.webp" alt="MSI MPG B650 CARBON" />
+            </div>
+            <div class="product-card__body">
+              <h3>MSI MPG B650 CARBON</h3>
+              <p>AM5, PCIe 5.0 M.2, 14+2 фазы питания</p>
+              <span class="price">28 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="mb">
+            <div class="product-card__img">
+              <img src="images/z790.webp" alt="Gigabyte Z790 AORUS Master" />
+            </div>
+            <div class="product-card__body">
+              <h3>Gigabyte Z790 AORUS Master</h3>
+              <p>DDR5, Thunderbolt 4, WiFi 6E</p>
+              <span class="price">52 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="ssd">
+            <div class="product-card__img">
+              <img src="images/m2-990.webp" alt="Samsung 990 PRO 2TB" />
+            </div>
+            <div class="product-card__body">
+              <h3>Samsung 990 PRO 2TB</h3>
+              <p>NVMe M.2, чтение 7450 МБ/с, PCIe 4.0</p>
+              <span class="price">19 990 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="ssd">
+            <div class="product-card__img">
+              <img src="images/m2wd.webp" alt="WD Black SN850X 1TB" />
+            </div>
+            <div class="product-card__body">
+              <h3>WD Black SN850X 1TB</h3>
+              <p>PCIe 4.0, 7300 МБ/с, для PS5</p>
+              <span class="price">12 490 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="ram">
+            <div class="product-card__img">
+              <img src="images/fury32gb.webp" alt="Kingston Fury 32GB DDR5" />
+            </div>
+            <div class="product-card__body">
+              <h3>Kingston Fury 32GB DDR5</h3>
+              <p>6000 МГц, CL36, RGB подсветка</p>
+              <span class="price">15 790 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="ram">
+            <div class="product-card__img">
+              <img
+                src="images/corsair32.webp"
+                alt="Corsair Vengeance 32GB DDR4"
+              />
+            </div>
+            <div class="product-card__body">
+              <h3>Corsair Vengeance 32GB DDR4</h3>
+              <p>3600 МГц, низкие тайминги, XMP 2.0</p>
+              <span class="price">9 490 рублей</span>
+              <div class="card-buttons">
+                <button class="add-cart">В корзину</button>
+                <button class="add-compare">Сравнить</button>
+                <button class="add-favorite">В избранное</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" id="cart-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Корзина</h2>
+          <button class="close-modal">Закрыть</button>
+        </div>
+        <div id="cart-items"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="fav-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Избранное</h2>
+          <button class="close-modal">Закрыть</button>
+        </div>
+        <div id="fav-items"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="compare-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Сравнение товаров</h2>
+          <button class="close-modal">Закрыть</button>
+        </div>
+        <div id="compare-items"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="login-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Авторизация</h2>
+          <button class="close-modal">Закрыть</button>
+        </div>
+        <div class="order-form">
+          <input type="email" id="login-email" placeholder="E-mail" />
+          <input type="password" id="login-password" placeholder="Пароль" />
+          <button id="submit-login" class="submit-btn">Войти</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="order-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Оформление заказа</h2>
+          <button class="close-modal">Закрыть</button>
+        </div>
+        <div class="order-form">
+          <input type="text" id="name" placeholder="Имя" />
+          <input type="text" id="surname" placeholder="Фамилия" />
+          <input type="tel" id="phone" placeholder="Номер телефона" />
+          <input type="text" id="address" placeholder="Адрес доставки" />
+          <button id="submit-order" class="submit-btn">
+            Подтвердить заказ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" id="contacts">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__block">
+            <h3>PCore</h3>
+            <p>Интернет-магазин компьютерных комплектующих</p>
+            <p>Качественные компоненты для вашего ПК</p>
+          </div>
+
+          <div class="footer__block">
+            <h3>Контакты</h3>
+            <p>📩 pcore@hardware.ru</p>
+            <p>📞 +7 (800) 555-35-35</p>
+            <p>📍 г. Москва, Технопарк</p>
+          </div>
+
+          <div class="footer__block">
+            <h3>Режим работы</h3>
+            <p>🕐 Ежедневно: 10:00 - 21:00</p>
+            <p>🕐 Доставка по всей РФ</p>
+            <p>🕐 Самовывоз из магазина</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 PCore — Все права защищены</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
